@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Contatti - FormSubmit</title>
+    <link rel="stylesheet" href="formsubmit-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>📋 Contattaci</h1>
+            <p class="subtitle">Compila il form e riceverai una conferma via email</p>
+            
+            <!-- 
+            ============================================
+            ISTRUZIONI PERSONALIZZAZIONE:
+            ============================================
+            1. Sostituisci "TUA-EMAIL@esempio.it" con la tua email vera
+            2. (Opzionale) Cambia l'URL di _next con la tua pagina di ringraziamento
+            3. Salva e carica sul server
+            4. FATTO! Il form funziona immediatamente
+            ============================================
+            https://formsubmit.co/live-demo
+            -->
+            
+            <form 
+                action="https://formsubmit.co/chat.heritage.ve@gmail.com" 
+                method="POST"
+                id="contactForm"
+            >
+                <!-- Configurazione FormSubmit (campi nascosti) -->
+                
+                <!-- Oggetto dell'email che riceverai -->
+                <input type="hidden" name="_subject" value="🆕 Nuovo contatto dal sito web!">
+                
+                <!-- Pagina di ringraziamento dopo l'invio (PERSONALIZZA QUESTO URL) -->
+                <input type="hidden" name="_next" value="https://tuosito.it/grazie.html">
+                
+                <!-- Disabilita il captcha di default di FormSubmit (rimuovi per abilitarlo) -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <!-- Template email: "box" | "table" | "default" -->
+                <input type="hidden" name="_template" value="box">
+                
+                <!-- Invia copia anche a un altro indirizzo (opzionale) -->
+                <!-- <input type="hidden" name="_cc" value="altro-indirizzo@esempio.it"> -->
+                
+                <!-- Protezione anti-spam (Honeypot) -->
+                <input type="text" name="_honey" style="display:none">
+
+                <!-- CAMPI DEL FORM -->
+                
+                <!-- Nome -->
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                        required 
+                        minlength="2" 
+                        placeholder="Es. Mario Rossi"
+                    >
+                </div>
+
+                <!-- Sesso -->
+                <div class="form-group">
+                    <label for="sesso">Sesso *</label>
+                    <select id="sesso" name="sesso" required>
+                        <option value="">Seleziona...</option>
+                        <option value="Maschio">Maschio</option>
+                        <option value="Femmina">Femmina</option>
+                        <option value="Preferisco non specificare">Preferisco non specificare</option>
+                    </select>
+                </div>
+
+                <!-- Età -->
+                <div class="form-group">
+                    <label for="eta">Età *</label>
+                    <input 
+                        type="number" 
+                        id="eta" 
+                        name="eta" 
+                        required 
+                        min="18" 
+                        max="120" 
+                        placeholder="Es. 25"
+                    >
+                </div>
+
+                <!-- Nazione -->
+                <div class="form-group">
+                    <label for="nazione">Nazione di Origine *</label>
+                    <select id="nazione" name="nazione" required>
+                        <option value="">Seleziona...</option>
+                        <option value="Italia">Italia</option>
+                        <option value="Svizzera">Svizzera</option>
+                        <option value="Francia">Francia</option>
+                        <option value="Germania">Germania</option>
+                        <option value="Spagna">Spagna</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Croazia">Croazia</option>
+                        <option value="Altra">Altra</option>
+                    </select>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="mario.rossi@esempio.it"
+                    >
+                </div>
+
+                <!-- Cellulare -->
+                <div class="form-group">
+                    <label for="cellulare">Numero di Cellulare *</label>
+                    <input 
+                        type="tel" 
+                        id="cellulare" 
+                        name="cellulare" 
+                        required 
+                        pattern="[0-9+\s\-()]+" 
+                        placeholder="+39 123 456 7890"
+                    >
+                </div>
+
+                <!-- Messaggio opzionale -->
+                <div class="form-group">
+                    <label for="messaggio">Messaggio (opzionale)</label>
+                    <textarea 
+                        id="messaggio" 
+                        name="messaggio" 
+                        rows="4" 
+                        placeholder="Scrivi qui il tuo messaggio..."
+                    ></textarea>
+                </div>
+
+                <!-- Privacy -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="privacy" name="privacy_accettata" value="Sì" required>
+                        <span>Acconsento al trattamento dei dati personali secondo l'<a href="privacy.html" target="_blank">informativa privacy</a> *</span>
+                    </label>
+                </div>
+
+                <!-- Consenso email marketing -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="email_consent" name="consenso_email" value="Sì">
+                        <span>Acconsento a ricevere comunicazioni via email</span>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">
+                    Invia Richiesta
+                </button>
+
+                <p class="info-text">
+                    ℹ️ Dopo l'invio riceverai un'email di conferma da FormSubmit. 
+                    <strong>Clicca sul link nell'email per attivare il form</strong> (solo la prima volta).
+                </p>
+            </form>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>🚀 Come funziona?</h3>
+            <ol>
+                <li><strong>Compila il form</strong> con i tuoi dati</li>
+                <li><strong>Premi "Invia"</strong></li>
+                <li><strong>Ricevi conferma</strong> via email (la prima volta devi cliccare sul link di conferma)</li>
+                <li><strong>Fatto!</strong> Da quel momento tutti i form ti arriveranno direttamente</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="formsubmit-script.js"></script>
+</body>
+</html>
